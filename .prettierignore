@@ -1,0 +1,8 @@
+coverage
+node_module
+build
+public
+
+
+#ignore svg files
+*.svg
