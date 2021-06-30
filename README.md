@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# metrotransit
+metrotransit provides bus/train transit information. All the information are based on APIs response via Metro Transit NextTrip API. 
+For more information visit https://svc.metrotransit.org/nextrip
+swagger : https://svc.metrotransit.org/swagger/index.html 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Prerequisites
+This application is developed using React 17 so need Node.js verison 9.10.1+ , yarn.
 
-## Available Scripts
+Visit https://nodejs.org/en/download/ to get more information to download Node.
 
-In the project directory, you can run:
+Run node -v and npm -v to check if node is installed with specific version. 
 
-### `yarn start`
+Once you install npm then go for yarn install 
+ 
+```npm install --global yarn```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Steps to run the application
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Download repo
+1. Open Terminal or command promt and run below commands
+2. Clone metrotransit using below git command in your desired folder
 
-### `yarn test`
+    git clone https://github.com/vekannan/metrotransit.git
+    
+3. After cloning metrotransit folder will be created. 
+4. cd to metrotrasit
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Install application
+1. run below command to download dependencies 
 
-### `yarn build`
+    ```yarn```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+#### Running application through react script 
+1. Run the command: 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+   ```yarn start```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+2. This application start runing and serves using port 3000
 
-### `yarn eject`
+3. your default browser will open with address http://localhost:3000/ 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Prod ready Deployment
+1. Run the following command to get production ready application: 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    ```yarn build ```
+2. you may install serve globally or run serve uisng npx and give your own port 
+    ``` npx serve -l 8080 -s build ```
+    
+## Run Unit tests
+1. run the following command:  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   ``` yarn test ```
+   
+2. The above command build the application and generates code coverage.
+3. Code coverage can be view in HTML format also.Code coverage can be obtained from mnmetro>metrotrasit>coverage>index.html
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Folder and code info
+This applicatoin uses react, redux , redux-thunk, Jest , renderer
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+index.js --> Create Store with thunk as middleware and add the application in root node
 
-### Code Splitting
+datastore > transitApi --> Call's API 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+store > action > action file
 
-### Analyzing the Bundle Size
+store > reducers > reducer 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+view > util -> reusable selet component
 
-### Making a Progressive Web App
+view > master component and departure component 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+__test__ > all test folders 
 
-### Advanced Configuration
+## Description
+On page load, fetches routes and diplay routes dropdown. On selecting route directions dropdown loads and on selecting direction stops dropdown loads and on selecting stops list of departures loads . Departures list updated every 6mins the . The departure that is about to schedule in 30 mins will be diaplyed in blue icon. Page load will show only 3 departures. On slecting more option will be displayed  
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-### `yarn build` fails to minify
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
