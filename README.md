@@ -43,8 +43,9 @@ Once you install npm then go for yarn install
 1. Run the following command to get production ready application: 
 
     ```yarn build ```
-2. you may install serve globally or run serve uisng npx and give your own port 
+2. you may install serve globally or run serve uisng npx and give your own port for now i gave 8080
     ``` npx serve -l 8080 -s build ```
+3. Open browser and check http://localhost:8080
     
 ## Run Unit tests
 1. run the following command:  
