@@ -7,7 +7,7 @@ function TripPlanner() {
   const [filteredList, setFilteredList] = useState([]);
 
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     dispatch(fetchRoutes());
   }, []);
